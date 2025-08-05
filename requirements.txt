@@ -1,3 +1,2 @@
-streamlit
-tmdbv3api
-os
+streamlit==1.37.0
+tmdbv3api==1.7.1
