@@ -1,2 +1,2 @@
-streamlit==1.37.0
-tmdbv3api==1.7.1
+streamlit==1.47.0
+tmdbv3api==1.9.0
