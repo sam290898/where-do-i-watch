@@ -1,21 +1,10 @@
-# --- Setup Instructions ---
-# 1. Make sure you have Python installed.
-# 2. Install the required libraries by running this command in your terminal:
-#    pip install streamlit tmdbv3api
-# 3. Get a free API key from The Movie Database (TMDb).
-#    - Create an account at https://www.themoviedb.org/
-#    - Go to your account settings -> API section and generate a key.
-# 4. Paste your API key into the API_KEY variable below.
-# 5. Save this file (e.g., as streamlit_app.py).
-# 6. Run the app from your terminal: streamlit run streamlit_app.py
-
 import streamlit as st
 from tmdbv3api import TMDb, Movie, TV, Search
 from tmdbv3api.exceptions import TMDbException
 
 # --- Configuration ---
 # IMPORTANT: Paste your API key between the quotes below.
-# API_KEY = '3baf6f00e9596f6c8a8657d20cd48c3d'
+api_key = st.secrets["MY_API_KEY"]
 
 
 # Dictionary of countries and their ISO 3166-1 codes
@@ -54,7 +43,7 @@ st.title("🎬 Streaming Service Finder")
 
 # --- API Key Input Section ---
 # Use session_state to store the API key
-
+st.session_state.api_key = api_key
 
 
 if 'api_key' not in st.session_state or not st.session_state.api_key:
